@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ThatChat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Extra icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* I'm trying to eeping this minimal, and only use bootstrap, but I want this perfect  */
+        .navbar-brand:hover, .nav-link:hover {
+            color: #0d6efd !important; 
+        }
+        .carousel-img {
+            height: 400px; 
+            object-fit: cover; 
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .card {
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            border-radius: 10px;
+            transition: transform 0.2s; 
+            width: 100%;
+            max-width: 300px; 
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-5px); 
+        }
+        .team-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #0d6efd; 
+            margin: 0 auto 1rem;
+            display: block;
+        }
+        .card-title, .card-text, .text-muted {
+            width: 100%;
+            word-wrap: break-word; /* Keep text in bounds */
+        }
+        /* Tablets - responsiveness is life */
+        @media (min-width: 768px) {
+            .carousel-img { height: 500px; } 
+            .carousel-caption h3 { font-size: 1.75rem; }
+            .carousel-caption p { font-size: 1.1rem; }
+            .card { max-width: 350px; }
+            .team-img { width: 180px; height: 180px; }
+            .navbar-nav .nav-link { padding-left: 1rem; padding-right: 1rem; }
+        }
+        /* Desktop sizes */
+        @media (min-width: 992px) {
+            .carousel-img {
+                width: 60%; /* Smaller width for centering */
+                height: 500px;
+                object-fit: cover;
+                image-rendering: -webkit-optimize-contrast; /* Sharp images */
+                margin: 0 auto;
+            }
+            .carousel-caption {
+                padding: 2rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .carousel-caption h3 { font-size: 2.5rem; }
+            .carousel-caption p { font-size: 1.5rem; }
+            .card { max-width: 400px; padding: 2rem; }
+            .team-img { width: 220px; height: 220px; }
+            .card-title { font-size: 1.5rem; }
+            .card-text, .text-muted { font-size: 1.2rem; }
+            .navbar-nav .nav-link { padding-left: 1.5rem; padding-right: 1.5rem; font-size: 1.1rem; }
+            .btn-primary { padding: 0.75rem 2rem; font-size: 1.2rem; }
+            .lead { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column bg-white">
+    <!-- Navbar Dark, sticky -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ThatChat</a>
+            <!-- Toggler for small screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Nav links, shoved to the right -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="index.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active px-2" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--  Quick intro -->
+    <section class="py-4 bg-light text-center">
+        <div class="container">
+            <h1 class="text-primary mb-3"><br>About ThatChat</h1>
+            <p class="lead mb-4 px-3">ThatChat is an instant, secure, messaging platform designed for privacy and ease of use.</p>
+            <!-- Join button to link back to login -->
+            <a href="index.html" class="btn btn-primary">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Carousel slide of some pictures and info-->
+    <div id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- Slide 1: Messaging -->
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1522159698025-071104a1ddbd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHBob25lJTIwYmx1ZXxlbnwwfDB8MHx8fDA%3D" class="d-block carousel-img" alt="Chat Interface">
+                <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded text-white">
+                    <h3 class="fw-bold">Instant Messaging</h3>
+                    <p>Fast, reliable connections worldwide.</p>
+                </div>
+            </div>
+            <!-- Slide 2: Security -->
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNlY3VyaXR5fGVufDB8MHwwfHx8MA%3D%3D" class="d-block carousel-img" alt="Security">
+                <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded text-white">
+                    <h3 class="fw-bold">Safe & Secure</h3>
+                    <p>Top-tier encryption for your privacy.</p>
+                </div>
+            </div>
+            <!-- Slide 3: Groups -->
+            <div class="carousel-item">
+                <img src="https://plus.unsplash.com/premium_photo-1679429320552-ec9038ccd550?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGdyb3VwfGVufDB8MHwwfHx8MA%3D%3D" class="d-block carousel-img" alt="Group Chat">
+                <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded text-white">
+                    <h3 class="fw-bold">Group Chats</h3>
+                    <p>Securely connect with your communities.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Mission & Vision: -->
+    <div class="container py-5">
+        <div class="row justify-content-center text-center">
+            <!-- Mission -->
+            <div class="col-md-6 mb-3">
+                <h3 class="text-primary mb-3">Our Mission</h3>
+                <p class="lead px-2">At ThatChat, we are committed to providing a platform that prioritizes user privacy and seamless communication. Our mission is to empower individuals and communities to connect without boundaries, ensuring trust and security at every step.</p>
+            </div>
+            <!-- Vision -->
+            <div class="col-md-6 mb-3">
+                <h3 class="text-primary mb-3">Our Vision</h3>
+                <p class="lead px-2">The ultimate platform for private messaging. Our vision is to create a world where communication is seamless, secure, and accessible to everyone. </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- The I am the team section -->
+    <div class="container-fluid py-5">
+        <h2 class="text-center text-primary mb-4">Our Team</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <!-- My pic -->
+                    <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/475297110_122094816890760047_1207207328006611222_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=fe5ecc&_nc_ohc=m9Ywof-IXQ8Q7kNvgH8nkBo&_nc_oc=AdlQowhtKoHMVcsZZTQgKhDCoO1RDw_w1XPAiyN87IGIlE1hihLwLDZdOak18atfTU8&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=XUwWPyXdeUCHLX2UogsBkQ&oh=00_AYHuI1nUqoS3jt9H1Ng41IVPQpAk6Cvb3uu1QzrBA9Ry5w&oe=67E7CB3E" class="team-img rounded-circle" alt="Skyler Blu">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Skyler Blu</h5>
+                        <p class="card-text text-primary">Founder & Developer</p>
+                        <p class="text-muted">Building a secure chat experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container text-center">
+            <p class="mb-1">© 2025 Skyler Blu. All rights reserved.</p>
+            <p class="mb-0 text-muted small">Secure communication</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle, needed for carousel and navbar -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

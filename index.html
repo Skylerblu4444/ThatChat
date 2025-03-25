@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThatChat - Login & Register</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            /* Custom css was added becuase Bootstrap doesn’t do everything */
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; /* Flex column to push footer down */
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #0d6efd !important; 
+        }
+
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+        }
+        /* Tablets - responsiveness is life */
+        @media (min-width: 768px) {
+            .auth-section h1 { font-size: 2.5rem; }
+            .auth-section .lead { font-size: 1.5rem; }
+            .auth-section .card h3 { font-size: 1.75rem; }
+        }
+        /* Desktop sizes */
+        @media (min-width: 992px) {
+            .auth-section h1 { font-size: 3rem; }
+            .auth-section .lead { font-size: 1.75rem; }
+            .auth-section .card h3 { font-size: 2rem; }
+            .navbar-nav .nav-link { padding-left: 1.5rem; padding-right: 1.5rem; font-size: 1.1rem; }
+            .btn-primary, .btn-success { padding: 1rem 2.5rem; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar: Dark, sticky-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ThatChat</a>
+            <!-- Toggler for small screen -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Nav links, shoved to the right  -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active px-3" href="index.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Added this to hit all needed componets and this was actually cool to learn-->
+    <div class="container-fluid p-0 min-vh-100 d-flex justify-content-center align-items-center" style="background-image: url('https://plus.unsplash.com/premium_photo-1681399975135-252eab5fd2db?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHRlY2h8ZW58MHx8MHx8fDA%3D'); background-size: cover; background-position: center;">
+        <!-- Card for the login/signup teaser -->
+        <div class="card bg-dark bg-opacity-75 text-white shadow-lg" style="max-width: 22rem; width: 100%;">
+            <div class="card-body text-center p-4">
+                <h3 class="card-title mb-3">Welcome to ThatChat <br> my Bootstrap project!</h3>
+                <p class="card-text mb-4">Log in to access your account</p>
+                <!-- Avatar image -->
+                <img src="https://images.unsplash.com/photo-1510723185481-c39848b105c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5vbnxlbnwwfHwwfHx8MA%3D%3D" class="rounded-circle mb-4 shadow-lg" style="width: 120px; height: 120px;" alt="Neon Avatar">
+                <!-- Login button-->
+                <a href="#auth-section" class="btn btn-primary w-100 mb-3 scroll-to-auth">Log In</a>
+                <!-- Sign Up button, hidden on small screens to hit that needed componet -->
+                <a href="#auth-section" class="btn btn-outline-light w-100 d-none d-md-block scroll-to-auth">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- login/register form -->
+    <section id="auth-section" class="auth-section pt-7 pb-5">
+        <div class="container">
+            <p class="text-center lead mb-5">Join our secure chat platform today!</p>
+            <div class="row justify-content-center">
+                <!-- Register Card -->
+                <div class="col-md-5 mb-4">
+                    <div class="card p-4 bg-white shadow rounded-3">
+                        <h3 class="text-center mb-4">Register</h3>
+                        <form>
+                            <div class="mb-3">
+                                <!--FN,LN,EM,PW-->
+                                <label for="first-name" class="form-label fw-bold">First Name</label>
+                                <input type="text" id="first-name" class="form-control" placeholder="Enter first name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="last-name" class="form-label fw-bold">Last Name</label>
+                                <input type="text" id="last-name" class="form-control" placeholder="Enter last name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email-reg" class="form-label fw-bold">Email</label>
+                                <input type="email" id="email-reg" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password-reg" class="form-label fw-bold">Password</label>
+                                <input type="password" id="password-reg" class="form-control" placeholder="Create a password" required>
+                            </div>
+                            <!-- Terms checkbox -->
+                            <div class="form-check mb-4">
+                                <input type="checkbox" class="form-check-input" id="terms-checkbox" required>
+                                <label class="form-check-label" for="terms-checkbox">I agree to the <a href="terms.html" target="_blank">terms of use</a></label>
+                            </div>
+                            <!-- Submit button, green -->
+                            <button type="submit" class="btn btn-success w-100 px-4 py-2">Register Now</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Login Card -->
+                <div class="col-md-5 mb-4">
+                    <div class="card p-4 bg-white shadow rounded-3">
+                        <h3 class="text-center mb-4">Login</h3>
+                        <form>
+                            <!-- Email password  -->
+                            <div class="mb-3">
+                                <label for="email-login" class="form-label fw-bold">Email</label>
+                                <input type="email" id="email-login" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password-login" class="form-label fw-bold">Password</label>
+                                <input type="password" id="password-login" class="form-control" placeholder="Enter your password" required>
+                            </div>
+                            <!-- Login button-->
+                            <button type="submit" class="btn btn-primary w-100 px-4 py-2">Login Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Groups: Show off some dummy data part of the project needs-->
+    <section class="container mt-5">
+        <h2 class="text-center text-primary mb-4">Trending Groups</h2>
+        <!-- Responsive table wrapper -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Group Name</th>
+                        <th scope="col">Number of people</th>
+                        <th scope="col">About</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>The Family</td>
+                        <td>888,888</td>
+                        <td>Supporting each other</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>MoneyMoves</td>
+                        <td>777,7777</td>
+                        <td>All things making money and grinding</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>God is good</td>
+                        <td>555,444</td>
+                        <td>People who love God!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">© 2025 Skyler Blu. All rights reserved.</p>
+            <p class="mb-0 text-muted small">Secure messaging starts here</p>
+        </div>
+    </footer>
+
+    <!-- I found this Bootstrap JS bundle,  and needed it to collapse and scroll-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // This script will grab the scroll buttons and make them smooth
+        document.querySelectorAll('.scroll-to-auth').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // this will stop the jumpy anchor
+                // I wanted it to scroll down to auth section like if login was clicked at the top witin the cointer-fluid img and used this
+                document.querySelector('#auth-section').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

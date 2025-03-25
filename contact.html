@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ThatChat</title>
+    <!--Bootstap and icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #0d6efd !important;
+        }
+        /* Custom CSS that can't be replaced with Bootstrap */
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #0d6efd;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s; 
+        }
+        .team-img {
+            border: 4px solid #0d6efd; 
+        }
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+        }
+
+        /* Media Queries for Tablets */
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            .team-img {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        /* Custom Media Queries for Larger Screens  */
+        @media (min-width: 992px) {
+            .section-title {
+                font-size: 3rem;
+            }
+            .team-img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body> <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ThatChat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="index.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active px-3" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--contact me the creater, email, and img-->
+    <section class="contact-section pt-7 pb-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary section-title"><br><br>Contact Us <i class="bi bi-envelope-fill ms-2"></i></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 mb-5">
+                    <div class="contact-card p-4 bg-white shadow rounded-3">
+                        <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/475297110_122094816890760047_1207207328006611222_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=110&ccb=1-7&_nc_sid=fe5ecc&_nc_ohc=m9Ywof-IXQ8Q7kNvgH8nkBo&_nc_oc=AdlQowhtKoHMVcsZZTQgKhDCoO1RDw_w1XPAiyN87IGIlE1hihLwLDZdOak18atfTU8&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=XUwWPyXdeUCHLX2UogsBkQ&oh=00_AYHuI1nUqoS3jt9H1Ng41IVPQpAk6Cvb3uu1QzrBA9Ry5w&oe=67E7CB3E" class="team-img rounded-circle mb-4 mx-auto d-block" style="width: 200px; height: 200px;" alt="Skyler Blu">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Skyler Blu</h5>
+                            <p class="card-text text-primary mb-3">Creator of ThatChat</p>
+                            <p class="text-muted mb-4">Questions? Feedback? I’m here to assist with all things ThatChat!</p>
+                            <a href="mailto:skylerblu4444@gmail.com" class="btn btn-primary"><i class="bi bi-envelope me-2"></i>Email Me</a>
+                        </div>
+                    </div>
+                </div>
+                <!--let me get back to you-->
+                <div class="col-lg-7 col-md-6">
+                    <div class="contact-card p-4 bg-white shadow rounded-3">
+                        <h4 class="text-center mb-4">Send a Message</h4>
+                        <form name="contact" method="POST" data-netlify="true">
+                            <input type="hidden" name="form-name" value="contact">
+                            <div class="mb-4">
+                                <label for="name" class="form-label fw-bold">Name <span class="text-muted">(Optional)</span></label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="form-label fw-bold">Email <span class="text-muted">(Optional)</span></label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Your email">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="form-label fw-bold">Subject <span class="text-danger">*</span></label>
+                                <input type="text" id="subject" name="subject" class="form-control" placeholder="What’s on your mind?" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label fw-bold">Message <span class="text-danger">*</span></label>
+                                <textarea id="message" name="message" rows="6" class="form-control" placeholder="Your message..." required></textarea>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-send me-2"></i>Send</button>
+                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--footer-->
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">© 2025 Skyler Blu. All rights reserved.</p>
+            <p class="mb-0 text-muted small">We’re here to help</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

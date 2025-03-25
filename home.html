@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThatChat - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- extra icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            /* Custom css added because Bootstrap doesn’t do everything*/
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; 
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #0d6efd !important; 
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #0d6efd;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s; 
+        }
+        /* Tablets - responsiveness is life */
+        @media (min-width: 768px) {
+            .section-title { font-size: 2.5rem; }
+            .card h5 { font-size: 1.5rem; }
+            .card p { font-size: 1.1rem; }
+        }
+        /* Desktop sizes */
+        @media (min-width: 992px) {
+            .section-title { font-size: 3rem; }
+            .card h5 { font-size: 1.75rem; }
+            .card p { font-size: 1.25rem; }
+            .navbar-nav .nav-link { padding-left: 1.5rem; padding-right: 1.5rem; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Dark, sticky -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ThatChat</a>
+            <!-- Toggler for small screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Nav links, shoved to the right -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="index.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active px-3" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- my features section -->
+    <section class="features py-5 mt-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary section-title">Why Choose ThatChat?</h2>
+            <div class="row">
+                <!-- Card for Messaging info -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4 shadow rounded-3">
+                        <div class="card-body text-center">
+                            <!-- Icon from Font Awesome -->
+                            <i class="fas fa-comments fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title fw-bold">Real-Time Messaging</h5>
+                            <p class="card-text">Experience instant communication with our cutting-edge messaging system, designed for speed and reliability.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card for Communities inof -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4 shadow rounded-3">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title fw-bold">Communities</h5>
+                            <p class="card-text">Connect with like-minded individuals by joining or creating vibrant communities tailored to your interests.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card for Security info -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4 shadow rounded-3">
+                        <div class="card-body text-center">
+                            <i class="fas fa-lock fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title fw-bold">Secure & Private</h5>
+                            <p class="card-text">Enjoy peace of mind with end-to-end encryption protecting your conversations at all times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dummy chat to let people see the interface-->
+    <section class="chat-preview bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary section-title">Preview ThatChat</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow rounded-3">
+                        <!-- Chat header -->
+                        <div class="card-header bg-primary text-light">
+                            <h5 class="mb-0">Group Chat: Secret Friends</h5>
+                        </div>
+                        <!-- Chat body with fake messages -->
+                        <div class="card-body" style="min-height: 350px;">
+                            <div class="chat-message mb-3">
+                                <strong>Skyler:</strong> Hey everyone, ThatChat makes private group chats so easy!
+                            </div>
+                            <div class="chat-message mb-3 text-end">
+                                <strong>You:</strong> Totally agree! It’s super fast too.
+                            </div>
+                            <div class="chat-message mb-3">
+                                <strong>Bob:</strong> Anyone up for a hangout later?
+                            </div>
+                        </div>
+                        <!-- Chat input -->
+                        <div class="card-footer">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Type your message...">
+                                <!-- Send button with icon -->
+                                <button class="btn btn-primary"><i class="bi bi-send"></i> Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fake Testimonials -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary section-title">What Users Say</h2>
+            <div class="row">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4 shadow rounded-3">
+                        <div class="card-body text-center">
+                            <i class="fas fa-quote-left fa-2x mb-3 text-primary"></i>
+                            <p class="card-text">"ThatChat’s speed keeps me connected with my team effortlessly!"</p>
+                            <h6 class="card-title fw-bold mt-3">Skyler Spiller</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4 shadow rounded-3">
+                        <div class="card-body text-center">
+                            <i class="fas fa-quote-left fa-2x mb-3 text-primary"></i>
+                            <p class="card-text">"Finding new friends in community groups is a breeze."</p>
+                            <h6 class="card-title fw-bold mt-3">Kaylee Harris</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4 shadow rounded-3">
+                        <div class="card-body text-center">
+                            <i class="fas fa-quote-left fa-2x mb-3 text-primary"></i>
+                            <p class="card-text">"The security features give me total peace of mind."</p>
+                            <h6 class="card-title fw-bold mt-3">Summer Sky</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">© 2025 Skyler Blu. All rights reserved.</p>
+            <p class="mb-0 text-muted small">Connecting the world, securely</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle, needed for navbar collapse -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
